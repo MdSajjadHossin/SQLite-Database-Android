@@ -24,6 +24,9 @@ public class MyDBHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         db.execSQL("CREATE TABLE " + TABLE_NAME + "(" + KEY_ID + "INTEGER PRIMARY KEY AUTOINCREMENT," + KEY_NAME + "TEXT" + KEY_PHONE_NO + "TEXT" + ")" );
 
+        SQLiteDatabase dataBase = this.getWritableDatabase();
+
+        dataBase.close();
     }
 
     @Override
